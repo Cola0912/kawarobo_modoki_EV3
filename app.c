@@ -58,7 +58,7 @@ void run_task(intptr_t unused){
 
     ev3_lcd_draw_string("ultraSonic_sensor", 0,0);
     ev3_lcd_draw_string(c, 140,0);
-     ev3_lcd_draw_string("cm", 160,0);
+    ev3_lcd_draw_string("cm", 160,0);
 
     ev3_lcd_draw_line	(0,9,300,9);
     ev3_lcd_fill_rect(0,11,ulso*relcd,11,EV3_LCD_BLACK);
@@ -73,7 +73,12 @@ void run_task(intptr_t unused){
 
 
     ev3_lcd_draw_string("Battery_Voltage", 0,53);
-    ev3_lcd_draw_string(c3, 140,53);
+    ev3_lcd_draw_string(c3, 130,53);
+    ev3_lcd_draw_string("mV", 160,53);
+
+    ev3_lcd_draw_line	(0,63,300,63);
+    ev3_lcd_fill_rect(0,65,bat*0.018,11,EV3_LCD_BLACK);
+    ev3_lcd_draw_line	(0,77,300,77);
 
 //move
 
@@ -125,6 +130,7 @@ void run_task(intptr_t unused){
 
     ev3_lcd_fill_rect(ulso*relcd,11,300,11,EV3_LCD_WHITE);
     ev3_lcd_fill_rect(color*1.79,38,300,11,EV3_LCD_WHITE);
+    ev3_lcd_fill_rect(bat*0.018,65,300,11,EV3_LCD_WHITE);
     //ev3_lcd_fill_rect(140,0,100,8,EV3_LCD_WHITE);
     }
 }
